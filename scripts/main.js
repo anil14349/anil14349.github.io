@@ -40,18 +40,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Experience Timeline Data
 const experienceData = [
     {
-        title: 'Senior Integration Architect',
-        company: 'Tech Solutions Inc.',
-        period: '2020 - Present',
-        description: 'Leading the design and implementation of enterprise-wide integration solutions.'
+        title: 'Principal Consultant',
+        company: 'PWC',
+        period: 'July 2022 - Present',
+        description: 'System discovery and application design based on the functional requirements. Working on Mulesoft development as a senior developer and API design using RAML.'
     },
     {
         title: 'Integration Architect',
-        company: 'Global Systems Ltd.',
-        period: '2018 - 2020',
-        description: 'Designed and implemented microservices architecture for cloud-native applications.'
+        company: 'Netrovert Ind Pvt Ltd (PWC)',
+        period: 'July 2021 - July 2022',
+        description: 'System discovery and application design based on the functional requirements. Working closely with the client and the Mulesoft Delivery managers.'
     },
-    // Add more experience items as needed
+    {
+        title: 'Engineering Manager',
+        company: 'HSBC Software Pvt Ltd',
+        period: 'September 2018 - July 2021',
+        description: 'Product design and development using Mulesoft and Java. Leading teams, managing projects, and handling stakeholder relationships. Responsible for project and resource management.'
+    },
+    {
+        title: 'Senior Consultant',
+        company: 'Deloitte India Pvt Ltd',
+        period: 'May 2016 - September 2018',
+        description: 'Worked on Mulesoft development as a senior developer. API design using RAML.'
+    },
+    {
+        title: 'Mule Consultant',
+        company: 'Whishworks Pvt Ltd',
+        period: 'November 2014 - May 2016',
+        description: 'Worked on Mulesoft development as a senior developer. API design using RAML and project leading.'
+    },
+    {
+        title: 'System Engineer',
+        company: 'IBM',
+        period: 'March 2010 - September 2014',
+        description: 'Worked as Integration developer.'
+    },
+    {
+        title: 'Senior Software Engineer',
+        company: 'MARLABS India Pvt Ltd',
+        period: 'November 2008 - March 2010',
+        description: 'Worked as senior Java developer.'
+    },
+    {
+        title: 'Software Engineer',
+        company: 'Cellarch Tech Pvt. Ltd',
+        period: 'February 2008 - November 2008',
+        description: 'Worked as Java developer.'
+    }
 ];
 
 // Projects Data
