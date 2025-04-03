@@ -43,43 +43,57 @@ const experienceData = [
         title: 'Principal Consultant',
         company: 'PWC',
         period: 'July 2022 - Present',
-        description: 'System discovery and application design based on the functional requirements. Working on Mulesoft development as a senior developer and API design using RAML.'
+        description: 'System discovery and application design based on the functional requirements. Working on Mulesoft development as a senior developer and API design using RAML.',
+        achievements: ['Lead a team of 5 developers', 'Implemented a new API design framework'],
+        technologies: ['Mulesoft', 'RAML', 'API Design']
     },
     {
         title: 'Integration Architect',
         company: 'Netrovert Ind Pvt Ltd (PWC)',
         period: 'July 2021 - July 2022',
-        description: 'System discovery and application design based on the functional requirements. Working closely with the client and the Mulesoft Delivery managers.'
+        description: 'System discovery and application design based on the functional requirements. Working closely with the client and the Mulesoft Delivery managers.',
+        achievements: ['Integrated 3 new enterprise systems'],
+        technologies: ['Mulesoft', 'Anypoint Platform', 'API Management']
     },
     {
         title: 'Engineering Manager',
         company: 'HSBC Software Pvt Ltd',
         period: 'September 2018 - July 2021',
-        description: 'Product design and development using Mulesoft and Java. Leading teams, managing projects, and handling stakeholder relationships. Responsible for project and resource management.'
+        description: 'Product design and development using Mulesoft and Java. Leading teams, managing projects, and handling stakeholder relationships. Responsible for project and resource management.',
+        achievements: ['Managed a team of 10 engineers', 'Increased project completion rate by 20%'],
+        technologies: ['Mulesoft', 'Java', 'Project Management']
     },
     {
         title: 'Senior Consultant',
         company: 'Deloitte India Pvt Ltd',
         period: 'May 2016 - September 2018',
-        description: 'Worked on Mulesoft development as a senior developer. API design using RAML.'
+        description: 'Worked on Mulesoft development as a senior developer. API design using RAML.',
+        achievements: ['Developed a new API design tool'],
+        technologies: ['Mulesoft', 'RAML', 'API Design']
     },
     {
         title: 'Mule Consultant',
         company: 'Whishworks Pvt Ltd',
         period: 'November 2014 - May 2016',
-        description: 'Worked on Mulesoft development as a senior developer. API design using RAML and project leading.'
+        description: 'Worked on Mulesoft development as a senior developer. API design using RAML and project leading.',
+        achievements: ['Led a project to integrate 5 enterprise systems'],
+        technologies: ['Mulesoft', 'RAML', 'Project Management']
     },
     {
         title: 'System Engineer',
         company: 'IBM',
         period: 'March 2010 - September 2014',
-        description: 'Worked as Integration developer.'
+        description: 'Worked as Integration developer.',
+        achievements: ['Developed a new integration framework'],
+        technologies: ['Integration', 'API Development']
     },
     {
         title: 'Senior Software Engineer',
         company: 'MARLABS India Pvt Ltd',
         period: 'November 2008 - March 2010',
-        description: 'Worked as senior Java developer.'
+        description: 'Worked as senior Java developer.',
+        achievements: ['Developed a new API design tool'],
+        technologies: ['Java', 'API Design']
     },
     {
         title: 'Software Engineer',
@@ -94,6 +108,11 @@ const projectsData = [
     {
         title: "AI-Powered Customer Service Platform",
         description: "Led the development of an intelligent customer service platform leveraging ML for automated response generation and sentiment analysis. Implemented using Python, TensorFlow, and NLP techniques.",
+        achievements: [
+            "Achieved 85% accuracy in automated response generation",
+            "Reduced customer service response time by 60%",
+            "Processed over 1M customer interactions monthly"
+        ],
         technologies: ["Python", "TensorFlow", "NLP", "AWS SageMaker", "Docker", "Kubernetes"],
         image: "assets/project1.jpg",
         link: "#"
@@ -101,6 +120,11 @@ const projectsData = [
     {
         title: "Enterprise Integration Hub",
         description: "Architected and implemented a scalable integration hub using Mule 4, handling 1M+ transactions daily. Integrated with multiple enterprise systems and implemented real-time monitoring.",
+        achievements: [
+            "Reduced integration latency by 40%",
+            "Implemented real-time monitoring dashboard",
+            "Successfully integrated 5 major enterprise systems"
+        ],
         technologies: ["Mule 4", "Anypoint Platform", "API Management", "Kafka", "Docker"],
         image: "assets/project2.jpg",
         link: "#"
@@ -108,6 +132,11 @@ const projectsData = [
     {
         title: "ML-Based Fraud Detection System",
         description: "Developed an ML-powered fraud detection system for financial transactions. Achieved 95% accuracy in fraud detection using ensemble learning techniques.",
+        achievements: [
+            "Achieved 95% accuracy in fraud detection",
+            "Reduced false positives by 30%",
+            "Processed 500K+ transactions daily"
+        ],
         technologies: ["Python", "Scikit-learn", "TensorFlow", "AWS Lambda", "MLOps"],
         image: "assets/project3.jpg",
         link: "#"
@@ -126,6 +155,20 @@ function renderExperience() {
                 <h4>${exp.company}</h4>
                 <p class="period">${exp.period}</p>
                 <p>${exp.description}</p>
+                ${exp.achievements ? `
+                    <ul class="achievements-list">
+                        ${exp.achievements.map(achievement => `
+                            <li>${achievement}</li>
+                        `).join('')}
+                    </ul>
+                ` : ''}
+                ${exp.technologies ? `
+                    <div class="tech-stack">
+                        ${exp.technologies.map(tech => `
+                            <span class="tech-tag">${tech}</span>
+                        `).join('')}
+                    </div>
+                ` : ''}
             </div>
         </div>
     `).join('');
@@ -144,6 +187,14 @@ function renderProjects() {
             <div class="project-content">
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
+                <div class="project-achievements">
+                    <h4>Key Achievements</h4>
+                    <ul>
+                        ${project.achievements.map(achievement => `
+                            <li>${achievement}</li>
+                        `).join('')}
+                    </ul>
+                </div>
                 <div class="project-tech">
                     ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                 </div>
