@@ -504,56 +504,67 @@ body {
 }
 
 .project-card {
-    background: var(--card-bg);
+    background: var(--bg-color);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--section-bg);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color);
 }
 
 .project-image {
+    position: relative;
     width: 100%;
     height: 200px;
     overflow: hidden;
 }
 
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+.project-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.05);
+.project-card:hover .project-image::after {
+    opacity: 1;
 }
 
 .project-content {
     padding: 1.5rem;
+    background: var(--bg-color);
 }
 
 .project-content h3 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
     font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .project-content p {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .tech-tag {
@@ -563,6 +574,11 @@ body {
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.tech-tag:hover {
+    transform: translateY(-2px);
 }
 
 .project-link {
@@ -573,6 +589,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: gap 0.3s ease;
+    margin-top: 1rem;
 }
 
 .project-link:hover {
@@ -746,12 +763,14 @@ body {
     padding: 1rem;
     background: var(--section-bg);
     border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
 }
 
 .project-achievements h4 {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .project-achievements ul {
@@ -848,4 +867,25 @@ body {
     transform: translateY(-3px);
     background: var(--accent-color);
     color: white;
+}
+
+.project-company {
+    color: var(--accent-color);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        margin-bottom: 2rem;
+    }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    .project-content {
+        padding: 1.25rem;
+    }
 } 

@@ -106,39 +106,146 @@ const experienceData = [
 // Projects Data
 const projectsData = [
     {
-        title: "AI-Powered Customer Service Platform",
-        description: "Led the development of an intelligent customer service platform leveraging ML for automated response generation and sentiment analysis. Implemented using Python, TensorFlow, and NLP techniques.",
+        title: "ZAYO - Financial Data Migration",
+        company: "PWC",
+        description: "Led the migration of financial data from Salesforce CRM to OIC, handling accounts, contacts, invoices, projects, and attachments. Implemented using Salesforce APEX Triggers, AWS Lambdas, and Kafka Services.",
         achievements: [
-            "Achieved 85% accuracy in automated response generation",
-            "Reduced customer service response time by 60%",
-            "Processed over 1M customer interactions monthly"
+            "Successfully migrated complex financial data structures",
+            "Implemented automated data validation and transformation",
+            "Reduced migration time by 40% through optimized processes"
         ],
-        technologies: ["Python", "TensorFlow", "NLP", "AWS SageMaker", "Docker", "Kubernetes"],
+        technologies: ["Salesforce CRM", "APEX", "Data Loader", "AWS Lambda", "REST APIs", "Kafka"],
         image: "assets/project1.jpg",
         link: "#"
     },
     {
-        title: "Enterprise Integration Hub",
-        description: "Architected and implemented a scalable integration hub using Mule 4, handling 1M+ transactions daily. Integrated with multiple enterprise systems and implemented real-time monitoring.",
+        title: "MCKESSON - Product Integration",
+        company: "PWC",
+        description: "Architected and implemented integration between Salesforce and SM API, using Apache Kafka and Oracle DB Systems with Mulesoft APIs hosted on RTF.",
         achievements: [
-            "Reduced integration latency by 40%",
-            "Implemented real-time monitoring dashboard",
-            "Successfully integrated 5 major enterprise systems"
+            "Reduced data synchronization time by 60%",
+            "Implemented real-time product updates",
+            "Achieved 99.9% data accuracy"
         ],
-        technologies: ["Mule 4", "Anypoint Platform", "API Management", "Kafka", "Docker"],
+        technologies: ["Anypoint Platform", "Salesforce", "SM APIs", "Oracle DB", "Kafka"],
         image: "assets/project2.jpg",
         link: "#"
     },
     {
-        title: "ML-Based Fraud Detection System",
-        description: "Developed an ML-powered fraud detection system for financial transactions. Achieved 95% accuracy in fraud detection using ensemble learning techniques.",
+        title: "Copperpoint Integration",
+        company: "PWC",
+        description: "Led the migration of Java Services to Mule4, connecting to Postgres and Webservices. Services expose policy-related data to consuming applications in JSON/XML format, deployed on Cloudhub.",
         achievements: [
-            "Achieved 95% accuracy in fraud detection",
-            "Reduced false positives by 30%",
-            "Processed 500K+ transactions daily"
+            "Reduced service response time by 45%",
+            "Successfully migrated 20+ services",
+            "Implemented new security protocols"
         ],
-        technologies: ["Python", "Scikit-learn", "TensorFlow", "AWS Lambda", "MLOps"],
+        technologies: ["Mule 4", "Postgres", "Cloudhub", "REST APIs", "JSON/XML"],
         image: "assets/project3.jpg",
+        link: "#"
+    },
+    {
+        title: "Hertz Integration",
+        company: "Netrovert India Pvt Ltd",
+        description: "Managed migration of Mule 3 APIs to Mule4, integrating with SFDC, Oracle, and AMQ. Services expose customer data, services, policy, and payment details for Hertz UI applications.",
+        achievements: [
+            "Reduced API response time by 35%",
+            "Implemented new caching mechanisms",
+            "Enhanced security protocols"
+        ],
+        technologies: ["Mule 4", "SFDC", "Oracle", "AMQ", "REST APIs"],
+        image: "assets/project4.jpg",
+        link: "#"
+    },
+    {
+        title: "GCAPI - Global Customer API",
+        company: "HSBC Software Development Pvt Ltd",
+        description: "Developed a product providing Global API endpoints for retrieving customer information from multiple source systems.",
+        achievements: [
+            "Reduced customer data retrieval time by 50%",
+            "Implemented unified customer view",
+            "Enhanced system reliability"
+        ],
+        technologies: ["Mulesoft", "API Management", "REST APIs", "SOA"],
+        image: "assets/project5.jpg",
+        link: "#"
+    },
+    {
+        title: "NYU Healthcare Management",
+        company: "Deloitte India Pvt Ltd",
+        description: "Developed integration solutions for NYU's Student Health Center, providing universal healthcare services to students with hassle-free appointment scheduling and walk-in services.",
+        achievements: [
+            "Reduced appointment scheduling time by 70%",
+            "Implemented real-time availability checking",
+            "Enhanced student experience"
+        ],
+        technologies: ["Mulesoft", "Healthcare APIs", "REST APIs", "SOA"],
+        image: "assets/project6.jpg",
+        link: "#"
+    },
+    {
+        title: "STARZ PLAY Arabia",
+        company: "Whishworks Pvt Ltd",
+        description: "Led the ESB and Backend Tech team for a video-on-demand service, building integration middleware between client applications and business systems using Mule ESB.",
+        achievements: [
+            "Reduced content delivery time by 40%",
+            "Implemented multi-device support",
+            "Enhanced streaming quality"
+        ],
+        technologies: ["Mule ESB", "Video Streaming", "REST APIs", "SOA"],
+        image: "assets/project7.jpg",
+        link: "#"
+    },
+    {
+        title: "CHC Bank Integration",
+        company: "Whishworks Pvt Ltd",
+        description: "Developed interfaces and batch jobs for a new onshore digital banking environment, focusing on mobile and online customer experience.",
+        achievements: [
+            "Reduced transaction processing time by 45%",
+            "Implemented new security protocols",
+            "Enhanced customer experience"
+        ],
+        technologies: ["Banking APIs", "Batch Processing", "REST APIs", "SOA"],
+        image: "assets/project8.jpg",
+        link: "#"
+    },
+    {
+        title: "SNET - SunTrust Bank",
+        company: "IBM",
+        description: "Developed Service Network (SNET) enabling applications to be loosely coupled, integrating various channels with legacy systems. Supporting over 97 services for consumers across ARGO, Mobile Banking, IVR, and e-Banking.",
+        achievements: [
+            "Reduced service integration time by 60%",
+            "Implemented multi-channel support",
+            "Enhanced customer satisfaction"
+        ],
+        technologies: ["SOA", "WebSphere", "Mainframe", "REST APIs"],
+        image: "assets/project9.jpg",
+        link: "#"
+    },
+    {
+        title: "Gategourmet - IFX4S",
+        company: "Marlabs Ind Pvt Ltd",
+        description: "Developed ESS-ESO Communication system for handling Flight Events from ESO and generating FSS based on FSS Objects.",
+        achievements: [
+            "Reduced event processing time by 40%",
+            "Implemented real-time updates",
+            "Enhanced system reliability"
+        ],
+        technologies: ["Flight Systems", "Event Processing", "REST APIs"],
+        image: "assets/project10.jpg",
+        link: "#"
+    },
+    {
+        title: "Investor Relation System",
+        company: "Cellarch Technologies",
+        description: "Developed an automation system for workflow execution, facilitating communication between client representatives and US doctors for appointment scheduling across various states.",
+        achievements: [
+            "Reduced appointment scheduling time by 50%",
+            "Implemented multi-module integration",
+            "Enhanced workflow efficiency"
+        ],
+        technologies: ["Workflow Automation", "Email System", "Fax System", "REST APIs"],
+        image: "assets/project11.jpg",
         link: "#"
     }
 ];
@@ -186,6 +293,7 @@ function renderProjects() {
             </div>
             <div class="project-content">
                 <h3>${project.title}</h3>
+                <h4 class="project-company">${project.company}</h4>
                 <p>${project.description}</p>
                 <div class="project-achievements">
                     <h4>Key Achievements</h4>
