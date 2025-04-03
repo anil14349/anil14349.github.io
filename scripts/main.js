@@ -92,18 +92,26 @@ const experienceData = [
 // Projects Data
 const projectsData = [
     {
-        title: 'Enterprise API Gateway',
-        description: 'Designed and implemented a scalable API gateway solution for enterprise clients.',
-        technologies: ['Node.js', 'Express', 'MongoDB', 'Docker'],
-        link: '#'
+        title: "AI-Powered Customer Service Platform",
+        description: "Led the development of an intelligent customer service platform leveraging ML for automated response generation and sentiment analysis. Implemented using Python, TensorFlow, and NLP techniques.",
+        technologies: ["Python", "TensorFlow", "NLP", "AWS SageMaker", "Docker", "Kubernetes"],
+        image: "assets/project1.jpg",
+        link: "#"
     },
     {
-        title: 'Microservices Platform',
-        description: 'Built a robust microservices platform with service mesh architecture.',
-        technologies: ['Kubernetes', 'Istio', 'Spring Boot', 'PostgreSQL'],
-        link: '#'
+        title: "Enterprise Integration Hub",
+        description: "Architected and implemented a scalable integration hub using Mule 4, handling 1M+ transactions daily. Integrated with multiple enterprise systems and implemented real-time monitoring.",
+        technologies: ["Mule 4", "Anypoint Platform", "API Management", "Kafka", "Docker"],
+        image: "assets/project2.jpg",
+        link: "#"
     },
-    // Add more projects as needed
+    {
+        title: "ML-Based Fraud Detection System",
+        description: "Developed an ML-powered fraud detection system for financial transactions. Achieved 95% accuracy in fraud detection using ensemble learning techniques.",
+        technologies: ["Python", "Scikit-learn", "TensorFlow", "AWS Lambda", "MLOps"],
+        image: "assets/project3.jpg",
+        link: "#"
+    }
 ];
 
 // Render Experience Timeline
@@ -125,17 +133,22 @@ function renderExperience() {
 
 // Render Projects
 function renderProjects() {
-    const projectsGrid = document.querySelector('.projects-grid');
-    if (!projectsGrid) return;
+    const projectsContainer = document.querySelector('.projects-grid');
+    if (!projectsContainer) return;
 
-    projectsGrid.innerHTML = projectsData.map(project => `
+    projectsContainer.innerHTML = projectsData.map(project => `
         <div class="project-card">
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <div class="technologies">
-                ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+            <div class="project-image">
+                <img src="${project.image}" alt="${project.title}" onerror="this.src='assets/default-project.jpg'">
             </div>
-            <a href="${project.link}" class="btn primary">View Project</a>
+            <div class="project-content">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="project-tech">
+                    ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
+                <a href="${project.link}" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+            </div>
         </div>
     `).join('');
 }
