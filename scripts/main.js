@@ -40,23 +40,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Experience Timeline Data
 const experienceData = [
     {
-        title: 'Principal Consultant',
+        title: 'Manager / Solution Architect',
         company: 'PWC',
         period: 'July 2022 - Present',
         description: 'System discovery and application design based on the functional requirements. Working on Mulesoft development as a senior developer and API design using RAML.',
-        achievements: ['Lead a team of 5 developers', 'Implemented a new API design framework'],
-        technologies: ['Mulesoft', 'RAML', 'API Design']
+        achievements: ['Lead the integration teams', 'Implemented API frameworks','worked on Mulesoft AI Code Gen Agent'],
+        technologies: ['Mulesoft', 'RAML', 'API Design', 'AI']
     },
     {
         title: 'Integration Architect',
         company: 'Netrovert Ind Pvt Ltd (PWC)',
         period: 'July 2021 - July 2022',
         description: 'System discovery and application design based on the functional requirements. Working closely with the client and the Mulesoft Delivery managers.',
-        achievements: ['Integrated 3 new enterprise systems'],
-        technologies: ['Mulesoft', 'Anypoint Platform', 'API Management']
+        achievements: ['Integrated Enterprise systems'],
+        technologies: ['Mulesoft', 'Anypoint Platform', 'API Management', 'Python']
     },
     {
-        title: 'Engineering Manager',
+        title: 'Senior Consultant Specialist',
         company: 'HSBC Software Pvt Ltd',
         period: 'September 2018 - July 2021',
         description: 'Product design and development using Mulesoft and Java. Leading teams, managing projects, and handling stakeholder relationships. Responsible for project and resource management.',
@@ -67,7 +67,7 @@ const experienceData = [
         title: 'Senior Consultant',
         company: 'Deloitte India Pvt Ltd',
         period: 'May 2016 - September 2018',
-        description: 'Worked on Mulesoft development as a senior developer. API design using RAML.',
+        description: 'Worked on Mulesoft development as a senior developer. System discovery and application design based on the functional requirements. ',
         achievements: ['Developed a new API design tool'],
         technologies: ['Mulesoft', 'RAML', 'API Design']
     },
@@ -76,7 +76,7 @@ const experienceData = [
         company: 'Whishworks Pvt Ltd',
         period: 'November 2014 - May 2016',
         description: 'Worked on Mulesoft development as a senior developer. API design using RAML and project leading.',
-        achievements: ['Led a project to integrate 5 enterprise systems'],
+        achievements: ['Led projects to integrate enterprise systems'],
         technologies: ['Mulesoft', 'RAML', 'Project Management']
     },
     {
@@ -84,22 +84,32 @@ const experienceData = [
         company: 'IBM',
         period: 'March 2010 - September 2014',
         description: 'Worked as Integration developer.',
-        achievements: ['Developed a new integration framework'],
+        achievements: ['Developed integration frameworks' , "Designed Internal products to support Integration projects using Java"],
         technologies: ['Integration', 'API Development']
     },
     {
         title: 'Senior Software Engineer',
         company: 'MARLABS India Pvt Ltd',
         period: 'November 2008 - March 2010',
-        description: 'Worked as senior Java developer.',
-        achievements: ['Developed a new API design tool'],
-        technologies: ['Java', 'API Design']
+        description: 'Worked as Senior Java developer.',
+        achievements: ['Developed Applciations using Java/J2EE '],
+        technologies: ['Java', 'Integration Design']
     },
     {
         title: 'Software Engineer',
         company: 'Cellarch Tech Pvt. Ltd',
         period: 'February 2008 - November 2008',
-        description: 'Worked as Java developer.'
+        description: 'Worked as Java developer.',
+        achievements: ['Developed Applciations using Java/J2EE'],
+        technologies: ['Java', 'Integration Design']
+    },
+    {
+        title: 'Software Engineering Trainee',
+        company: 'S2Tech',
+        period: 'December 2006 - May 2007',
+        description: 'Worked as Java developer trainee, focusing on core Java development and web applications.',
+        achievements: ['Implemented Java web applications', 'Participated in development of enterprise solutions'],
+        technologies: ['Java', 'J2EE', 'Web Development']
     }
 ];
 
@@ -115,8 +125,8 @@ const projectsData = [
             "Reduced migration time by 40% through optimized processes"
         ],
         technologies: ["Salesforce CRM", "APEX", "Data Loader", "AWS Lambda", "REST APIs", "Kafka"],
-        image: "assets/project1.jpg",
-        link: "#"
+        image: "assets/images/projects/salesforce-integration.jpg",
+        defaultImage: "assets/images/projects/default-integration.jpg"
     },
     {
         title: "MCKESSON - Product Integration",
@@ -128,8 +138,8 @@ const projectsData = [
             "Achieved 99.9% data accuracy"
         ],
         technologies: ["Anypoint Platform", "Salesforce", "SM APIs", "Oracle DB", "Kafka"],
-        image: "assets/project2.jpg",
-        link: "#"
+        image: "assets/images/projects/mulesoft-integration.jpg",
+        defaultImage: "assets/images/projects/default-integration.jpg"
     },
     {
         title: "Copperpoint Integration",
@@ -286,7 +296,7 @@ function renderExperience() {
     });
 }
 
-// Render Projects
+// Render Projects with proper image handling
 function renderProjects() {
     const projectsGrid = document.querySelector('.projects-grid');
     if (!projectsGrid) return;
@@ -296,25 +306,31 @@ function renderProjects() {
         projectCard.className = 'project-card';
         
         const content = `
-            <div class="project-image">
-                <img src="${project.image}" alt="${project.title}" onerror="this.src='assets/default-project.jpg'">
+            <div class="project-image ${!project.image ? 'no-image' : ''}">
+                ${project.image ? 
+                    `<img src="${project.image}" alt="${project.title}" onerror="this.parentElement.classList.add('no-image'); this.remove();">` :
+                    `<div class="default-project-image">
+                        <div class="integration-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                    </div>`
+                }
             </div>
             <div class="project-content">
                 <div class="project-company">${project.company}</div>
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
-                <div class="project-achievements">
-                    <h4>Key Achievements</h4>
-                    <ul>
-                        ${project.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
-                    </ul>
-                </div>
+                ${project.achievements ? `
+                    <div class="project-achievements">
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            ${project.achievements.slice(0, 3).map(achievement => `<li>${achievement}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
                 <div class="project-tech">
                     ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                 </div>
-                <a href="${project.link}" class="project-link">
-                    View Project <i class="fas fa-arrow-right"></i>
-                </a>
             </div>
         `;
         
@@ -351,7 +367,7 @@ document.addEventListener('click', (e) => {
 });
 
 // Enhanced Scroll Animations
-const sections = document.querySelectorAll('.section');
+const sectionElements = document.querySelectorAll('.section');
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -373,7 +389,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-sections.forEach(section => {
+sectionElements.forEach(section => {
     sectionObserver.observe(section);
 });
 
