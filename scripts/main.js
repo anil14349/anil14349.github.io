@@ -255,61 +255,72 @@ function renderExperience() {
     const timeline = document.querySelector('.timeline');
     if (!timeline) return;
 
-    timeline.innerHTML = experienceData.map(exp => `
-        <div class="timeline-item">
+    experienceData.forEach((exp, index) => {
+        const timelineItem = document.createElement('div');
+        timelineItem.className = 'timeline-item';
+        
+        const content = `
             <div class="timeline-content">
                 <h3>${exp.title}</h3>
                 <h4>${exp.company}</h4>
-                <p class="period">${exp.period}</p>
+                <div class="period">${exp.period}</div>
                 <p>${exp.description}</p>
                 ${exp.achievements ? `
-                    <ul class="achievements-list">
-                        ${exp.achievements.map(achievement => `
-                            <li>${achievement}</li>
-                        `).join('')}
-                    </ul>
+                    <div class="achievements">
+                        <h4>Key Achievements:</h4>
+                        <ul class="achievements-list">
+                            ${exp.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+                        </ul>
+                    </div>
                 ` : ''}
                 ${exp.technologies ? `
                     <div class="tech-stack">
-                        ${exp.technologies.map(tech => `
-                            <span class="tech-tag">${tech}</span>
-                        `).join('')}
+                        ${exp.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                     </div>
                 ` : ''}
             </div>
-        </div>
-    `).join('');
+        `;
+        
+        timelineItem.innerHTML = content;
+        timeline.appendChild(timelineItem);
+    });
 }
 
 // Render Projects
 function renderProjects() {
-    const projectsContainer = document.querySelector('.projects-grid');
-    if (!projectsContainer) return;
+    const projectsGrid = document.querySelector('.projects-grid');
+    if (!projectsGrid) return;
 
-    projectsContainer.innerHTML = projectsData.map(project => `
-        <div class="project-card">
+    projectsData.forEach(project => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        
+        const content = `
             <div class="project-image">
                 <img src="${project.image}" alt="${project.title}" onerror="this.src='assets/default-project.jpg'">
             </div>
             <div class="project-content">
+                <div class="project-company">${project.company}</div>
                 <h3>${project.title}</h3>
-                <h4 class="project-company">${project.company}</h4>
                 <p>${project.description}</p>
                 <div class="project-achievements">
                     <h4>Key Achievements</h4>
                     <ul>
-                        ${project.achievements.map(achievement => `
-                            <li>${achievement}</li>
-                        `).join('')}
+                        ${project.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
                     </ul>
                 </div>
                 <div class="project-tech">
                     ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                 </div>
-                <a href="${project.link}" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                <a href="${project.link}" class="project-link">
+                    View Project <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-        </div>
-    `).join('');
+        `;
+        
+        projectCard.innerHTML = content;
+        projectsGrid.appendChild(projectCard);
+    });
 }
 
 // Loading Screen
@@ -377,12 +388,12 @@ window.addEventListener('scroll', () => {
     scrollProgress.style.width = `${progress}%`;
 });
 
-// Initialize
+// Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     renderExperience();
     renderProjects();
     
-    // Add initial visible class to first section
+    // Add visible class to first section
     const firstSection = document.querySelector('.section');
     if (firstSection) {
         firstSection.classList.add('visible');
