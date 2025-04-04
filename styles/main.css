@@ -73,6 +73,38 @@ body {
     text-decoration: none;
 }
 
+/* Header Contact Info */
+.contact-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.contact-header a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.contact-header a:hover {
+    color: var(--primary-color);
+}
+
+.contact-header i {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+@media (max-width: 1024px) {
+    .contact-header {
+        display: none;
+    }
+}
+
 .nav-links {
     display: flex;
     gap: 1.5rem;
