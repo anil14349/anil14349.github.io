@@ -38,7 +38,7 @@ A modern, responsive personal profile website showcasing professional experience
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/anil14349.github.io.git
+   git clone https://github.com/anil14349/anil14349.github.io.git
    ```
 
 2. Navigate to the project directory:
@@ -77,7 +77,7 @@ This website is designed to be hosted on GitHub Pages. To deploy:
 3. Select the main branch as the source
 4. Save the changes
 
-Your site will be available at `https://yourusername.github.io/anil14349.github.io`
+Your site will be available at `https://anil14349.github.io/`
 
 ## Contributing
 
@@ -93,6 +93,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
+AnilKumar - [@anil14349](https://twitter.com/anil14349) - etagowni@gmail.com
 
-Project Link: [https://github.com/yourusername/anil14349.github.io](https://github.com/yourusername/anil14349.github.io)
+Project Link: [https://github.com/anil14349/anil14349.github.io](https://github.com/anil14349/anil14349.github.io)
