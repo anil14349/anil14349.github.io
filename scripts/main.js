@@ -306,7 +306,7 @@ function renderProjects() {
         projectCard.className = 'project-card';
         
         const content = `
-            <div class="project-image ${!project.image ? 'no-image' : ''}">
+           <!-- <div class="project-image ${!project.image ? 'no-image' : ''}">
                 ${project.image ? 
                     `<img src="${project.image}" alt="${project.title}" onerror="this.parentElement.classList.add('no-image'); this.remove();">` :
                     `<div class="default-project-image">
@@ -315,7 +315,7 @@ function renderProjects() {
                         </div>
                     </div>`
                 }
-            </div>
+            </div> -->
             <div class="project-content">
                 <div class="project-company">${project.company}</div>
                 <h3>${project.title}</h3>
