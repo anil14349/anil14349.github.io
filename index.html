@@ -245,24 +245,32 @@
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
-        document.getElementById('download-pdf').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Get the main element
-            const element = document.querySelector('main');
-            
-            // Configure options
-            const opt = {
-                margin: 10,
-                filename: 'Anil_Kumar_Resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-            
-            // Generate PDF
-            html2pdf().set(opt).from(element).save();
-        });
-    </script>
+  document.getElementById('download-pdf').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const downloadButton = document.getElementById('download-pdf');
+    const element = document.querySelector('main');
+
+    // Hide the button before generating PDF
+    downloadButton.style.display = 'none';
+
+    const opt = {
+      margin: 10,
+      filename: 'Anil_Kumar_Resume.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    // Use a small timeout to ensure UI updates before capture
+    setTimeout(() => {
+      html2pdf().set(opt).from(element).save().then(() => {
+        // Show the button again after PDF is saved
+        downloadButton.style.display = 'inline-block';
+      });
+    }, 100); // slight delay ensures the button is hidden when screenshot is taken
+  });
+</script>
+
 </body>
 </html> 
