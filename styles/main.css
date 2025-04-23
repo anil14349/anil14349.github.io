@@ -393,6 +393,12 @@ main {
     }
 }
 
+@media print {
+  .download-btn {
+    display: none !important;
+  }
+}
+
 @media (max-width: 600px) {
     body {
         padding: 0.5rem;
