@@ -252,8 +252,8 @@
     const element = document.querySelector('main');
 
     // Step 1: Hide the button
-    downloadButton.style.visibility = 'none';
-
+    //downloadButton.style.display = 'hidden';
+    downloadButton.style.display = 'none';
     // Step 2: Wait for a frame to render the updated DOM
     // Wait for DOM to update (100ms is enough)
     setTimeout(() => {
@@ -268,7 +268,7 @@
       // Step 3: Generate PDF
       html2pdf().set(opt).from(element).save().then(() => {
         // Step 4: Show the button again
-        downloadButton.style.visibility = 'visible';
+        downloadButton.style.display = 'inline-block';
       });
     });
   });
