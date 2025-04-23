@@ -251,26 +251,28 @@
     const downloadButton = document.getElementById('download-pdf');
     const element = document.querySelector('main');
 
-    // Hide the button before generating PDF
-    downloadButton.style.display = 'none';
+    // Step 1: Hide the button
+    downloadButton.style.visibility = 'hidden';
 
-    const opt = {
-      margin: 10,
-      filename: 'Anil_Kumar_Resume.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
+    // Step 2: Wait for a frame to render the updated DOM
+    requestAnimationFrame(() => {
+      const opt = {
+        margin: 10,
+        filename: 'Anil_Kumar_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
 
-    // Use a small timeout to ensure UI updates before capture
-    setTimeout(() => {
+      // Step 3: Generate PDF
       html2pdf().set(opt).from(element).save().then(() => {
-        // Show the button again after PDF is saved
-        downloadButton.style.display = 'inline-block';
+        // Step 4: Show the button again
+        downloadButton.style.visibility = 'visible';
       });
-    }, 100); // slight delay ensures the button is hidden when screenshot is taken
+    });
   });
 </script>
+
 
 </body>
 </html> 
