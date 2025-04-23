@@ -255,7 +255,8 @@
     downloadButton.style.visibility = 'none';
 
     // Step 2: Wait for a frame to render the updated DOM
-    requestAnimationFrame(() => {
+    // Wait for DOM to update (100ms is enough)
+    setTimeout(() => {
       const opt = {
         margin: 10,
         filename: 'Anil_Kumar_Resume.pdf',
